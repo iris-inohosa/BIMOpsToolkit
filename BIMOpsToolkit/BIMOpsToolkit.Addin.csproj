@@ -32,6 +32,21 @@
 		<ProjectReference Include="..\BIMOpsToolkit.Tools\BIMOpsToolkit.Tools.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="Resources.Designer.cs">
+	    <DependentUpon>Resources.resx</DependentUpon>
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Resources.resx">
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	  </EmbeddedResource>
+	</ItemGroup>
+
 	<!-- Copy Files for Debug -->
 	<Target Name="CopyFiles" AfterTargets="CoreBuild">
 		<PropertyGroup>

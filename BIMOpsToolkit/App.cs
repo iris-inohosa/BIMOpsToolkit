@@ -4,7 +4,6 @@ using JetBrains.Annotations;
 using Nice3point.Revit.Extensions;
 using Nice3point.Revit.Toolkit.External;
 using System.IO;
-using BIMOpsToolkit.Core;
 using BIMOpsToolkit.Core.Utils;
 
 namespace BIMOpsToolkit.Addin
