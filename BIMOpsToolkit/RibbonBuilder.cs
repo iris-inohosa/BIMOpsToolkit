@@ -17,7 +17,7 @@ namespace BIMOpsToolkit.Addin
 
             // versioning tools panel
             RibbonPanel versioningPanel = CreatePanel(Resources.RibbonPanel_VersioningTools);
-            versioningPanel.AddPushButton<DummyTest>(Resources.ButtonName_OpenVersionManager)
+            versioningPanel.AddPushButton<ShowVersionPanelCommand>(Resources.ButtonName_OpenVersionManager)
                 .SetLargeImage(ResourcesUtils.GetRibbonIconPath(assemblyPath, Resources.RibbonIcon_RevitVersionManager))
                 .SetToolTip(Resources.RibbonTooltip_RevitVersionManager);
         }
