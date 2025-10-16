@@ -1,12 +1,13 @@
 ﻿using Autodesk.Revit.UI;
-using BIMOpsToolkit.Utils;
+using BIMOpsToolkit.Addin.Commands.Versioning;
 using JetBrains.Annotations;
 using Nice3point.Revit.Extensions;
 using Nice3point.Revit.Toolkit.External;
 using System.IO;
-using System.Windows.Input;
+using BIMOpsToolkit.Core;
+using BIMOpsToolkit.Core.Utils;
 
-namespace BIMOpsToolkit
+namespace BIMOpsToolkit.Addin
 {
     [UsedImplicitly]
     public class App : ExternalApplication
@@ -14,15 +15,14 @@ namespace BIMOpsToolkit
         public override void OnStartup()
         {
             // create new tab and panel
-            string tabName = "BIMOps Toolkit";
-            Application.CreateRibbonTab(tabName);
-            RibbonPanel panel = Application.CreateRibbonPanel(tabName, "Versioning Tools");
-            string assemblyPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)!;
+            Application.CreateRibbonTab(Resources.Tab_ToolkitName);
+            RibbonPanel panel = Application.CreateRibbonPanel(Resources.Tab_ToolkitName, Resources.RibbonPanel_VersioningTools);
 
             // Create new button and add to ribbon
-            panel.AddPushButton<src.RevitVersionManager.Commands.DummyTest>("Open Version Manager")
+            string assemblyPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)!;
+            panel.AddPushButton<DummyTest>(Resources.ButtonName_OpenVersionManager)
                 .SetLargeImage(ResourcesUtils.GetRibbonIconPath(assemblyPath, Resources.RibbonIcon_RevitVersionManager))
-                .SetToolTip("The tool allow to store Revit Model data in Database and compare mulitple versions.");
+                .SetToolTip(Resources.RibbonTooltip_RevitVersionManager);
         }
 
         public override void OnShutdown() { }

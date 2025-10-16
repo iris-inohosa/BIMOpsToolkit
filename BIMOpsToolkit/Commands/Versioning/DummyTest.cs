@@ -3,7 +3,7 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Nice3point.Revit.Toolkit.External;
 
-namespace BIMOpsToolkit.src.RevitVersionManager.Commands
+namespace BIMOpsToolkit.Addin.Commands.Versioning
 {
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]

@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIMOpsToolkit", "BIMOpsToolkit\BIMOpsToolkit.csproj", "{61CFBFDF-BFE2-4FBC-9278-38A689527C9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIMOpsToolkit.Addin", "BIMOpsToolkit\BIMOpsToolkit.Addin.csproj", "{61CFBFDF-BFE2-4FBC-9278-38A689527C9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIMOpsToolkit.Core", "BIMOpsToolkit.Core\BIMOpsToolkit.Core.csproj", "{1E778274-582D-4EBC-8219-D9EE1387DCDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIMOpsToolkit.Tools", "BIMOpsToolkit.Tools\BIMOpsToolkit.Tools.csproj", "{61AF1908-E81B-4F4C-AD6B-6CA37CA3A1EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIMOpsToolkit.Tests", "BIMOpsToolkit.Tests\BIMOpsToolkit.Tests.csproj", "{FB6ABCAC-D878-4A6B-8E3F-AF589071E495}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{61CFBFDF-BFE2-4FBC-9278-38A689527C9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61CFBFDF-BFE2-4FBC-9278-38A689527C9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61CFBFDF-BFE2-4FBC-9278-38A689527C9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E778274-582D-4EBC-8219-D9EE1387DCDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E778274-582D-4EBC-8219-D9EE1387DCDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E778274-582D-4EBC-8219-D9EE1387DCDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E778274-582D-4EBC-8219-D9EE1387DCDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61AF1908-E81B-4F4C-AD6B-6CA37CA3A1EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61AF1908-E81B-4F4C-AD6B-6CA37CA3A1EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61AF1908-E81B-4F4C-AD6B-6CA37CA3A1EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61AF1908-E81B-4F4C-AD6B-6CA37CA3A1EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB6ABCAC-D878-4A6B-8E3F-AF589071E495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB6ABCAC-D878-4A6B-8E3F-AF589071E495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB6ABCAC-D878-4A6B-8E3F-AF589071E495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB6ABCAC-D878-4A6B-8E3F-AF589071E495}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

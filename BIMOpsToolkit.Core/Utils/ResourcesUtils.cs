@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace BIMOpsToolkit.Utils
+namespace BIMOpsToolkit.Core.Utils
 {
     public static class ResourcesUtils
     {

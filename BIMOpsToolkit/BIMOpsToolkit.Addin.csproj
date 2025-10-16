@@ -22,24 +22,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Update="Resources.Designer.cs">
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Resources.resx</DependentUpon>
-		</Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-		<EmbeddedResource Update="Resources.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
-		</EmbeddedResource>
-	</ItemGroup>
-
-	<ItemGroup>
 		<Content Include="Resources\**\*.*">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\BIMOpsToolkit.Core\BIMOpsToolkit.Core.csproj" />
+		<ProjectReference Include="..\BIMOpsToolkit.Tools\BIMOpsToolkit.Tools.csproj" />
 	</ItemGroup>
 
 	<!-- Copy Files for Debug -->
@@ -47,14 +37,14 @@
 		<PropertyGroup>
 			<RevitAddinsDir>$(AppData)\Autodesk\Revit\Addins\2025\</RevitAddinsDir>
 			<AddinFile>$(ProjectDir)BIMOpsToolkit.addin</AddinFile>
-			<ResourcesDir>$(RevitAddinsDir)$(ProjectName)\Resources</ResourcesDir>
+			<ResourcesDir>$(RevitAddinsDir)BIMOpsToolkit\Resources</ResourcesDir>
 		</PropertyGroup>
 
 		<Message Text="Copy .addin File to $(RevitAddinsDir)" Importance="high" />
 		<Copy SourceFiles="$(AddinFile)" DestinationFolder="$(RevitAddinsDir)" />
 
 		<!-- Ensure target folders exist -->
-		<MakeDir Directories="$(RevitAddinsDir)$(ProjectName)" />
+		<MakeDir Directories="$(RevitAddinsDir)BIMOpsToolkit" />
 		<MakeDir Directories="$(ResourcesDir)" />
 
 		<!-- Copy all Build-Output-data (DLL, PDB, etc.) -->
@@ -62,7 +52,7 @@
 		<ItemGroup>
 			<OutputFiles Include="$(OutputPath)**\*.*" />
 		</ItemGroup>
-		<Copy SourceFiles="@(OutputFiles)" DestinationFolder="$(RevitAddinsDir)$(ProjectName)" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(OutputFiles)" DestinationFolder="$(RevitAddinsDir)BIMOpsToolkit" SkipUnchangedFiles="true" />
 
 		<!-- Copy all resources with sub-folders -->
 		<ItemGroup>

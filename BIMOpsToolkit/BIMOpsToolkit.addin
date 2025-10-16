@@ -2,8 +2,8 @@
 <RevitAddIns>
 	<AddIn Type="Application">
 		<Name>BIMOpsToolkit</Name>
-		<Assembly>BIMOpsToolkit/BIMOpsToolkit.dll</Assembly>
-		<FullClassName>BIMOpsToolkit.App</FullClassName>
+		<Assembly>BIMOpsToolkit/BIMOpsToolkit.Addin.dll</Assembly>
+		<FullClassName>BIMOpsToolkit.Addin.App</FullClassName>
 		<AddInId>ED8A2BBD-16FC-40D4-B083-4EEC1DCEEE7C</AddInId>
 		<VendorId>Iris Inokhosa</VendorId>
 		<VendorDescription>Toolkit for BIM Processes</VendorDescription>

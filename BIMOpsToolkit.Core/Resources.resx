@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ButtonName_OpenVersionManager" xml:space="preserve">
+    <value>Open Version Manager</value>
+  </data>
   <data name="RibbonIcon_RevitVersionManager" xml:space="preserve">
     <value>RevitVersionManager.png</value>
+  </data>
+  <data name="RibbonPanel_VersioningTools" xml:space="preserve">
+    <value>Versioning Tools</value>
+  </data>
+  <data name="RibbonTooltip_RevitVersionManager" xml:space="preserve">
+    <value>The tool allow to store Revit Model data in Database and compare mulitple versions.</value>
+  </data>
+  <data name="Tab_ToolkitName" xml:space="preserve">
+    <value>BIMOps Toolkit</value>
   </data>
 </root>
