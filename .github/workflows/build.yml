@@ -22,7 +22,7 @@ jobs:
         run: dotnet restore
 
       - name: Build Solution
-        run: dotnet build RevitToolkit.sln --configuration Release --no-restore
+        run: dotnet build BIMOpsToolkit.sln --configuration Release --no-restore
 
       - name: Run NUnit Tests
-        run: dotnet test RevitToolkit.Tests/RevitToolkit.Tests.csproj --configuration Release --no-build
+        run: dotnet test BIMOpsToolkit.Tests/BIMOpsToolkit.Tests.csproj --configuration Release --no-build
