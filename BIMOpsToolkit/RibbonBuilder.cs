@@ -13,19 +13,19 @@ namespace BIMOpsToolkit.Addin
 
         public void Create()
         {
-            _app.CreateRibbonTab(Resources.Tab_ToolkitName);
+            _app.CreateRibbonTab(RibbonResources.Tab_ToolkitName);
 
             // versioning tools panel
-            RibbonPanel versioningPanel = CreatePanel(Resources.RibbonPanel_VersioningTools);
-            versioningPanel.AddPushButton<ShowVersionPanelCommand>(Resources.ButtonName_OpenVersionManager)
-                .SetLargeImage(ResourcesUtils.GetRibbonIconPath(assemblyPath, Resources.RibbonIcon_RevitVersionManager))
-                .SetToolTip(Resources.RibbonTooltip_RevitVersionManager);
+            RibbonPanel versioningPanel = CreatePanel(RibbonResources.RibbonPanel_VersioningTools);
+            versioningPanel.AddPushButton<ShowVersionPanelCommand>(RibbonResources.ButtonName_OpenVersionManager)
+                .SetLargeImage(RibbonResourcesUtils.GetRibbonIconPath(assemblyPath, RibbonResources.RibbonIcon_RevitVersionManager))
+                .SetToolTip(RibbonResources.RibbonTooltip_RevitVersionManager);
         }
 
 
         private RibbonPanel CreatePanel(string panelName)
         {
-            return _app.CreateRibbonPanel(Resources.Tab_ToolkitName, panelName);
+            return _app.CreateRibbonPanel(RibbonResources.Tab_ToolkitName, panelName);
         }
 
     }

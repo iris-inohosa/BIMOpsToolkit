@@ -2,7 +2,7 @@
 
 namespace BIMOpsToolkit.Core.Utils
 {
-    public static class ResourcesUtils
+    public static class RibbonResourcesUtils
     {
         public static string GetRibbonIconPath(string exePath, string imageName)
         {

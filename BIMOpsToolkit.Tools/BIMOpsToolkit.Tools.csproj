@@ -8,8 +8,17 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+		<PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="2025.4.20" />
+		<PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="2025.4.20" />
+		<PackageReference Include="Nice3point.Revit.Extensions" Version="2025.1.1" />
+		<PackageReference Include="Nice3point.Revit.Toolkit" Version="2025.1.0" />
 		<PackageReference Include="System.Runtime.WindowsRuntime.UI.Xaml" Version="4.7.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\BIMOpsToolkit.Core\BIMOpsToolkit.Core.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
