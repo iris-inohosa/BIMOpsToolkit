@@ -66,6 +66,16 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="GridViewColumnHeader">
+            <Setter Property="BorderBrush" Value="#DDD"/>
+            <Setter Property="BorderThickness" Value="1,0,1,1"/>
+
+            <!-- top = 0 -->
+            <Setter Property="Background" Value="#F9F9F9"/>
+            <Setter Property="Padding" Value="4,2"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
     </UserControl.Resources>
     <DockPanel LastChildFill="True" Margin="8">
         <!-- Header -->
@@ -93,34 +103,13 @@
                       ItemsSource="{Binding Versions}"
                       SelectedItem="{Binding SelectedVersion}"
                       ScrollViewer.VerticalScrollBarVisibility="Auto"
-                      Background="White"
-                      BorderBrush="#CCC"
-                      BorderThickness="1">
-                <ListView.Template>
-                    <ControlTemplate TargetType="ListView">
-                        <Border CornerRadius="5"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                Background="{TemplateBinding Background}">
-                            <DockPanel>
-                                <GridViewHeaderRowPresenter DockPanel.Dock="Top"
-                                                Columns="{Binding View.Columns, RelativeSource={RelativeSource TemplatedParent}}"
-                                                AllowsColumnReorder="True"
-                                                Margin="0,0,0,2"/>
-                                <ScrollViewer Focusable="false">
-                                    <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                                </ScrollViewer>
-                            </DockPanel>
-                        </Border>
-                    </ControlTemplate>
-                </ListView.Template>
-
+                      Background="White">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Version" Width="75" DisplayMemberBinding="{Binding Name}" />
-                        <GridViewColumn Header="Created" Width="90" DisplayMemberBinding="{Binding CreatedAt}" />
-                        <GridViewColumn Header="By" Width="100" DisplayMemberBinding="{Binding Author}" />
-                        <GridViewColumn Header="Comments" Width="150" DisplayMemberBinding="{Binding Comment}" />
+                        <GridViewColumn Header="Version" Width="70" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="Created at" Width="80" DisplayMemberBinding="{Binding CreatedAt}" />
+                        <GridViewColumn Header="Author" Width="80" DisplayMemberBinding="{Binding Author}" />
+                        <GridViewColumn Header="Comments" Width="Auto" DisplayMemberBinding="{Binding Comment}" />
                     </GridView>
                 </ListView.View>
             </ListView>

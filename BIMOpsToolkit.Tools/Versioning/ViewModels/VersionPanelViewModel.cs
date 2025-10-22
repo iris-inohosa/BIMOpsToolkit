@@ -39,9 +39,9 @@ namespace BIMOpsToolkit.Tools.Versioning.ViewModels
 
         public ObservableCollection<VersionItem> Versions { get; set; } =
         [
-            new() { Name="V1.0", CreatedAt="2025-03-10", Author="Iris", Comment="Initial Scan" },
-            new() { Name="V1.1", CreatedAt="2025-03-12", Author="Max", Comment="Ceiling update" },
-            new() { Name="V2.0", CreatedAt="2025-03-15", Author="Sara", Comment="New MEP data" }
+            new() { Name="V1.0", CreatedAt="25-03-10", Author="Iris", Comment="Initial Scan" },
+            new() { Name="V1.1", CreatedAt="25-03-12", Author="Max", Comment="Ceiling update" },
+            new() { Name="V2.0", CreatedAt="25-03-15", Author="Sara", Comment="New MEP data" }
         ];
 
     }
