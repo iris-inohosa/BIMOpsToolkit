@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace BIMOpsToolkit.Tools.Versioning.Models
 {
-    public class VersionInfo
+    public class VersionItem
     {
-        public string Version { get; set; } = "";
         public string Name { get; set; } = "";
+        public string CreatedAt { get; set; } = "";
         public string Author { get; set; } = "";
+        public string Comment { get; set; } = "";
     }
 }
