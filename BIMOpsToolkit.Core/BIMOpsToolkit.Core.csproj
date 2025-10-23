@@ -7,10 +7,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Folder Include="Utils\" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="2025.4.20" />
 		<PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="2025.4.20" />
 		<PackageReference Include="Nice3point.Revit.Extensions" Version="2025.1.1" />

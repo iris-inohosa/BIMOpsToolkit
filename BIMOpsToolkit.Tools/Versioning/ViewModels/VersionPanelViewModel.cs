@@ -1,5 +1,7 @@
 ﻿using Autodesk.Revit.UI;
 using BIMOpsToolkit.Tools.Versioning.Models;
+using BIMOpsToolkit.Tools.Versioning.Services;
+using BIMOpsToolkit.Tools.Versioning.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
@@ -13,26 +15,39 @@ namespace BIMOpsToolkit.Tools.Versioning.ViewModels
 {
     public partial class VersionPanelViewModel : ObservableObject
     {
+        private readonly DialogService _dialogService;
+
         [ObservableProperty]
-        private string panelTitle = ToolsMetadata.ModelVersionInfo.Name;
+        private string mainPanelTitle = ToolsMetadata.ModelVersionInfo.Name;
+        [ObservableProperty]
+        private string saveWindowTitle = ToolsMetadata.ModelVersionInfo.SaveWindowTitle;
+        [ObservableProperty]
+        private string compareWindowTitle = ToolsMetadata.ModelVersionInfo.CompareWindowTitle;
+        [ObservableProperty]
+        private string settingsWindowTitle = ToolsMetadata.ModelVersionInfo.SettingsWindowTitle;
 
         [ObservableProperty]
         private string modelVersion = "0";
 
-        [RelayCommand]
-        private void OpenSaveVersion()
+        internal VersionPanelViewModel(DialogService dialogService)
         {
-            modelVersion = "Updated at " + DateTime.Now.ToLongTimeString();
+            _dialogService = dialogService;
         }
 
         [RelayCommand]
-        private void OpenCompareVersion()
+        private void OpenSaveVersionWindow()
+        {
+            _dialogService.ShowSaveVersionDialog();
+        }
+
+        [RelayCommand]
+        private void OpenCompareVersionsWindow()
         {
             TaskDialog.Show("Compare Versions", "Placeholder");
         }
 
         [RelayCommand]
-        private void OpenSettings()
+        private void OpenSettingsWindow()
         {
             TaskDialog.Show("Compare Versions", "Placeholder");
         }

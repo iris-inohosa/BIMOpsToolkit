@@ -1,5 +1,6 @@
 ﻿using Autodesk.Revit.UI;
 using BIMOpsToolkit.Addin;
+using BIMOpsToolkit.Tools.Versioning.Services;
 using BIMOpsToolkit.Tools.Versioning.ViewModels;
 using BIMOpsToolkit.Tools.Versioning.Views;
 using Nice3point.Revit.Toolkit.Decorators;
@@ -12,14 +13,19 @@ namespace BIMOpsToolkit.Tools.Versioning
         private static Guid Guid => GuidRegistry.ModelVersionPanelId;
         private static readonly string panelTitle = ToolsMetadata.ModelVersionInfo.Name;
 
-        private static VersionPanelViewModel viewModel;
+        private static VersionPanelViewModel versionPanelViewModel;
+        private static SaveVersionViewModel saveVersionViewModel;
+        private static readonly DialogService dialogService;
 
         public static void RegisterPanel(UIControlledApplication uIControlledApp)
         {
-            viewModel = new();
-            VersionPanel view = new() { DataContext = viewModel };
+            saveVersionViewModel = new();
+            SaveVersionView saveVersionView = new() { DataContext = saveVersionViewModel };
 
-            // Dockable Panel registrieren
+            versionPanelViewModel = new(dialogService);
+            VersionPanel mainView = new() { DataContext = versionPanelViewModel };
+
+            // register Dockable Panel
             DockablePaneProvider
                 .Register(uIControlledApp, Guid, panelTitle)
                 .SetConfiguration(data =>
@@ -29,7 +35,7 @@ namespace BIMOpsToolkit.Tools.Versioning
                         DockPosition = DockPosition.Right,
                     };
                     data.VisibleByDefault = false;
-                    data.FrameworkElement = view;
+                    data.FrameworkElement = mainView;
                 });
         }
     }
