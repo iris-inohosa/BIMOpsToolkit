@@ -5,8 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BIMOpsToolkit.Tools.Versioning.Views"
              xmlns:viewmodel="clr-namespace:BIMOpsToolkit.Tools.Versioning.ViewModels"
-             xmlns:system="clr-namespace:System;assembly=mscorlib"
-             d:DataContext="{d:DesignInstance Type=viewmodel:VersionPanelViewModel, IsDesignTimeCreatable=True}"
+             d:DataContext="{d:DesignInstance Type=viewmodel:VersionPanelViewModel}"
              mc:Ignorable="d"
              d:DesignHeight="800" d:DesignWidth="400"
              Background="White"
@@ -28,13 +27,13 @@
 
             <!--Header-->
             <DockPanel Grid.Row="0">
-                <Button Content="Save" Command="{Binding OpenSaveVersionCommand}"
+                <Button Content="Save" Command="{Binding OpenSaveVersionWindowCommand}"
                         Style="{DynamicResource RoundedButton}"
                         Width="50"/>
-                <Button Content="Compare" Command="{Binding OpenCompareVersionCommand}" 
+                <Button Content="Compare" Command="{Binding OpenCompareVersionsWindowCommand}" 
                         Style="{DynamicResource RoundedButton}"
                         Width="70"/>
-                <Button Content="Settings" Command="{Binding OpenSettingsVersionCommand}" 
+                <Button Content="Settings" Command="{Binding OpenSettingsWindowCommand}" 
                         Style="{DynamicResource RoundedButton}"
                         Width="70"/>
                 <TextBox Margin="5 3" 

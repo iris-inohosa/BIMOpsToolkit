@@ -4,23 +4,17 @@ using BIMOpsToolkit.Tools.Versioning.Services;
 using BIMOpsToolkit.Tools.Versioning.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BIMOpsToolkit.Tools.Versioning.ViewModels
 {
     public partial class VersionPanelViewModel : ObservableObject
     {
-        private readonly DialogService _dialogService;
+        public DialogService DialogService { get; set; }
 
         [ObservableProperty]
         private string mainPanelTitle = ToolsMetadata.ModelVersionInfo.Name;
-        [ObservableProperty]
-        private string saveWindowTitle = ToolsMetadata.ModelVersionInfo.SaveWindowTitle;
         [ObservableProperty]
         private string compareWindowTitle = ToolsMetadata.ModelVersionInfo.CompareWindowTitle;
         [ObservableProperty]
@@ -29,15 +23,10 @@ namespace BIMOpsToolkit.Tools.Versioning.ViewModels
         [ObservableProperty]
         private string modelVersion = "0";
 
-        internal VersionPanelViewModel(DialogService dialogService)
-        {
-            _dialogService = dialogService;
-        }
-
         [RelayCommand]
         private void OpenSaveVersionWindow()
         {
-            _dialogService.ShowSaveVersionDialog();
+            DialogService?.ShowDialog<SaveVersionView, SaveVersionViewModel>();
         }
 
         [RelayCommand]

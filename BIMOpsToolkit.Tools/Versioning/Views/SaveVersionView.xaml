@@ -1,4 +1,4 @@
-﻿<Window x:Class="BIMOpsToolkit.Tools.Versioning.Views.VersionPanel"
+﻿<Window x:Class="BIMOpsToolkit.Tools.Versioning.Views.SaveVersionView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:BIMOpsToolkit.Tools.Versioning.Views"
              xmlns:viewmodel="clr-namespace:BIMOpsToolkit.Tools.Versioning.ViewModels"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
-             d:DataContext="{d:DesignInstance Type=viewmodel:VersionPanelViewModel}"
+             d:DataContext="{d:DesignInstance Type=viewmodel:SaveVersionViewModel}"
              mc:Ignorable="d"
-             d:DesignHeight="200" d:DesignWidth="400"
+             Height="200" Width="400"
              Background="White"
              Title="{Binding SaveWindowTitle}"
              FontFamily="/BIMOpsToolkit.Tools;component/Resources/Roboto/Roboto-Regular.ttf#Roboto">
@@ -54,10 +54,13 @@
         <Button Content="Cancel" 
                 Style="{DynamicResource RoundedButton}"
                 Grid.Column="2"
-                Grid.Row="3"/>
+                Grid.Row="3"
+                Click="CloseOnCancelClick"/>
         <Button Content="Save" 
                 Style="{DynamicResource RoundedButton}"
                 Grid.Column="3"
-                Grid.Row="3"/>
+                Grid.Row="3"
+                Click="CloseOnCancelClick"
+                Command="{Binding SaveCommand}"/>
     </Grid>
 </Window>

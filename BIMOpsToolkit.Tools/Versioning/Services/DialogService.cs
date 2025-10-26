@@ -1,25 +1,41 @@
 ﻿using Autodesk.Revit.UI;
 using BIMOpsToolkit.Core.Utils;
-using BIMOpsToolkit.Tools.Versioning.Views;
-using System.Windows.Interop;
+using System.Windows;
 
 namespace BIMOpsToolkit.Tools.Versioning.Services
 {
-    internal class DialogService
+    public class DialogService(UIApplication uiApp)
     {
-        private readonly SaveVersionView _saveVersionView;
-        private readonly UIApplication _uiApp;
-        DialogService(SaveVersionView saveVersionView, UIApplication uiApp)
-        {
+        private readonly UIApplication _uiApp = uiApp;
 
-            _saveVersionView = saveVersionView;
-            _uiApp = uiApp;
-        }
-        public bool ShowSaveVersionDialog()
+        public bool ShowDialog<TView, TViewModel>()
+            where TView : Window, new()
+            where TViewModel : new()
         {
-            WindowInteropHelper helper = new(_saveVersionView);
-            RevitWindowHelper.SetRevitAsOwner(_saveVersionView, _uiApp);
-            return _saveVersionView.ShowDialog() ?? false;
+            var viewModel = new TViewModel();
+            var window = new TView
+            {
+                DataContext = viewModel
+            };
+
+            RevitWindowHelper.SetRevitAsOwner(window, _uiApp);
+
+            bool? result = window.ShowDialog();
+            return result == true;
+        }
+
+        public void Show<TView, TViewModel>()
+            where TView : Window, new()
+            where TViewModel : new()
+        {
+            var viewModel = new TViewModel();
+            var window = new TView
+            {
+                DataContext = viewModel
+            };
+
+            RevitWindowHelper.SetRevitAsOwner(window, _uiApp);
+            window.Show();
         }
     }
 }

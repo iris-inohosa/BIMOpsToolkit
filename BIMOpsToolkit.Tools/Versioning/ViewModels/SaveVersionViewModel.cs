@@ -9,13 +9,15 @@ namespace BIMOpsToolkit.Tools.Versioning.ViewModels
     public partial class SaveVersionViewModel : ObservableObject
     {
         [ObservableProperty]
+        private string saveWindowTitle = ToolsMetadata.ModelVersionInfo.SaveWindowTitle;
+        [ObservableProperty]
         string versionName = string.Empty;
 
         [RelayCommand]
         private void Save()
         {
             // Logic to Save new Version
-            MessageBox.Show($"Version '{VersionName}' saved successfully!");
+            TaskDialog.Show("Done", $"Version '{VersionName}' saved successfully!");
         }
     }
 }

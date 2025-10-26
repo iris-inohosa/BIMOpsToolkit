@@ -23,5 +23,10 @@ namespace BIMOpsToolkit.Tools.Versioning.Views
         {
             InitializeComponent();
         }
+
+        private void CloseOnCancelClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

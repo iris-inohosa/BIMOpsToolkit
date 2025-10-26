@@ -20,13 +20,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\BIMOpsToolkit.Core\BIMOpsToolkit.Core.csproj" />
+		<ProjectReference Include="..\BIMOpsToolkit.Core\BIMOpsToolkit.Core.csproj" />
 	</ItemGroup>
-
-	<ItemGroup>
-		<None Update="Versioning\Views\VersionPanel.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</None>
-	</ItemGroup>
-
 </Project>

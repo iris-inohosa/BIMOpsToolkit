@@ -13,17 +13,11 @@ namespace BIMOpsToolkit.Tools.Versioning
         private static Guid Guid => GuidRegistry.ModelVersionPanelId;
         private static readonly string panelTitle = ToolsMetadata.ModelVersionInfo.Name;
 
-        private static VersionPanelViewModel versionPanelViewModel;
-        private static SaveVersionViewModel saveVersionViewModel;
-        private static readonly DialogService dialogService;
+        public static VersionPanelViewModel VersionPanelViewModel { get; } = new();
 
         public static void RegisterPanel(UIControlledApplication uIControlledApp)
         {
-            saveVersionViewModel = new();
-            SaveVersionView saveVersionView = new() { DataContext = saveVersionViewModel };
-
-            versionPanelViewModel = new(dialogService);
-            VersionPanel mainView = new() { DataContext = versionPanelViewModel };
+            VersionPanel mainView = new() { DataContext = VersionPanelViewModel };
 
             // register Dockable Panel
             DockablePaneProvider
