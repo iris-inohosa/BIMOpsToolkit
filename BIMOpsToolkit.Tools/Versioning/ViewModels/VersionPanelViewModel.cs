@@ -3,6 +3,7 @@ using BIMOpsToolkit.Tools.Versioning.Models;
 using BIMOpsToolkit.Tools.Versioning.Services;
 using BIMOpsToolkit.Tools.Versioning.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
 
@@ -11,7 +12,7 @@ namespace BIMOpsToolkit.Tools.Versioning.ViewModels
 {
     public partial class VersionPanelViewModel : ObservableObject
     {
-        public DialogService DialogService { get; set; }
+        private readonly DialogService _dialogService = Ioc.Default.GetService<DialogService>()!;
 
         [ObservableProperty]
         private string mainPanelTitle = ToolsMetadata.ModelVersionInfo.Name;
@@ -26,7 +27,7 @@ namespace BIMOpsToolkit.Tools.Versioning.ViewModels
         [RelayCommand]
         private void OpenSaveVersionWindow()
         {
-            DialogService?.ShowDialog<SaveVersionView, SaveVersionViewModel>();
+            _dialogService.ShowDialog<SaveVersionView, SaveVersionViewModel>();
         }
 
         [RelayCommand]
