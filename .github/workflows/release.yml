@@ -1,9 +1,9 @@
-name: Dev Build and Test BIMOpsToolkit
+name: Release BIMOpsToolkit
 
 on:
   push:
     branches:
-      - master
+      - test-release
 
 jobs:
   dev-build-test:
