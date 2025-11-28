@@ -1,4 +1,4 @@
-name: Build BIMOpsToolkit
+name: Dev Build and Test BIMOpsToolkit
 
 on:
   push:
