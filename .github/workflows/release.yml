@@ -6,7 +6,7 @@ on:
       - test-release
 
 jobs:
-  dev-build-test:
+  release-deploy:
     runs-on: windows-latest
 
     steps:
